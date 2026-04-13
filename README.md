@@ -13,6 +13,27 @@ Personal config files managed with a bare git repo.
 
 ## Setup on a new machine
 
+Install the tools these configs depend on:
+
+```bash
+sudo apt update && sudo apt install -y \
+  tmux \
+  neovim \
+  fzf \
+  fd-find \
+  bat \
+  ripgrep \
+  clangd
+
+# Rust toolchain (cargo is referenced in .bashrc)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Zed editor
+curl -fsSL https://zed.dev/install.sh | sh
+```
+
+Then clone and activate the dotfiles:
+
 ```bash
 git clone --bare git@github.com:sachingodishela/dotfiles.git ~/.dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
