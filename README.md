@@ -8,6 +8,7 @@ Personal config files managed with a bare git repo.
 - `.tmux.conf` — tmux config (vi mode, mouse, Alt+i prefix)
 - `.gitconfig` — git user config
 - `.config/nvim/init.lua` — neovim config
+- `.config/zed/keymap.json` — zed keybindings
 
 ## Setup on a new machine
 
