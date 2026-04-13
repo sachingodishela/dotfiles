@@ -9,6 +9,7 @@ Personal config files managed with a bare git repo.
 - `.gitconfig` — git user config
 - `.config/nvim/init.lua` — neovim config
 - `.config/zed/keymap.json` — zed keybindings
+- `.config/zed/settings.json` — zed settings (theme, font size, agent config)
 
 ## Setup on a new machine
 
