@@ -49,7 +49,7 @@ dotfiles checkout 2>&1 | grep -E "^\s+" | sed 's/^\s*//' | xargs -I{} mv {} {}.b
 dotfiles checkout
 ```
 
-## GNOME Terminal profile
+### GNOME Terminal profile
 
 Restore on a new machine (after checkout):
 
