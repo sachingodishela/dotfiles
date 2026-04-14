@@ -1,32 +1,6 @@
 {
   "permissions": {
-    "allow": [
-      "WebSearch",
-      "WebFetch(domain:developers.notion.com)",
-      "Bash(apt list:*)",
-      "Bash(apt-cache search:*)",
-      "Bash(snap find:*)",
-      "Read(//usr/lib/**)",
-      "Bash(sudo apt-get:*)",
-      "Bash(go version:*)",
-      "Bash(curl -sL https://go.dev/dl/go1.23.8.linux-amd64.tar.gz -o /tmp/go1.23.8.tar.gz)",
-      "Bash(tar -xzf /tmp/go1.23.8.tar.gz -C /home/godishela)",
-      "Bash(/home/godishela/go/bin/go version:*)",
-      "Bash(dpkg -l)",
-      "Bash(apt-cache policy:*)",
-      "Read(//usr/local/bin/**)",
-      "Read(//usr/local/etc/**)",
-      "Read(//usr/local/share/**)",
-      "Read(//usr/local/lib/**)",
-      "Read(//usr/local/share/man/**)",
-      "Bash(sudo rm:*)",
-      "Bash(fzf --version)",
-      "Bash(dpkg -l fzf)",
-      "Read(//usr/share/doc/fzf/examples/**)",
-      "Read(//usr/share/bash-completion/completions/**)",
-      "Read(//usr/share/**)",
-      "Bash(cloudflared tunnel:*)"
-    ],
+    "allow": [],
     "defaultMode": "auto"
   },
   "model": "opus[1m]",
