@@ -4,6 +4,9 @@
     "defaultMode": "auto"
   },
   "model": "opus[1m]",
+  "skipDangerousModePermissionPrompt": true,
   "skipAutoPermissionPrompt": true,
-  "skipDangerousModePermissionPrompt": true
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": true
+  }
 }
