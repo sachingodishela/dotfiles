@@ -144,7 +144,7 @@ HISTSIZE=50000
 HISTFILESIZE=100000
 
 # Quick Claude prompt
-hey() { claude -p "$*"; }
+hey() { claude -p "$*" | glow -; }
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
