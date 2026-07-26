@@ -1,0 +1,54 @@
+name: Auto-Provision & Mirror to GitLab
+
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '**'
+
+jobs:
+  gitlab-mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetches all history, branches, and tags
+
+      - name: Auto-Create and Sync Mirror
+        env:
+          GL_TOKEN: ${{ secrets.GLOBAL_GITLAB_PAT }}
+          # Replace 'your_gitlab_username' with your actual GitLab username/namespace
+          GL_USER: "sachingodishela" 
+          REPO_NAME: ${{ github.event.repository.name }}
+        run: |
+          echo "Checking if mirror repository exists on GitLab..."
+          
+          # 1. Query the GitLab API for the repository
+          HTTP_STATUS=$(curl --silent --output /dev/null --write-out "%{http_code}" \
+            --header "PRIVATE-TOKEN: $GL_TOKEN" \
+            "https://gitlab.com/api/v4/projects/${GL_USER}%2F${REPO_NAME}")
+
+          # 2. If it doesn't exist (404), provision it dynamically as a private repo
+          if [ "$HTTP_STATUS" -eq 404 ]; then
+            echo "Repository not found on GitLab. Auto-creating private mirror..."
+            curl --silent --request POST \
+              --header "PRIVATE-TOKEN: $GL_TOKEN" \
+              --data "name=${REPO_NAME}&visibility=private" \
+              "https://gitlab.com/api/v4/projects"
+            
+            # Give GitLab API a brief second to finish initializing the blank project
+            sleep 3
+          else
+            echo "Confirmed: Target mirror repository already exists."
+          fi
+
+          # 3. Formulate the authenticated remote URL and push everything
+          TARGET_URL="https://oauth2:${GL_TOKEN}@gitlab.com/${GL_USER}/${REPO_NAME}.git"
+          
+          echo "Pushing all branches to GitLab..."
+          git push --prune --force "$TARGET_URL" "refs/remotes/origin/*:refs/heads/*"
+          
+          echo "Pushing all tags to GitLab..."
+          git push --tags --force "$TARGET_URL"
