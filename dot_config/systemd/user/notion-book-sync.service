@@ -1,0 +1,23 @@
+[Unit]
+Description=Sync edited PDFs in Books to Notion
+Documentation=https://developers.notion.com/guides/data-apis/working-with-files-and-media
+Wants=network-online.target
+After=network-online.target
+ConditionPathIsDirectory=%h/Books
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node %h/Books/notion-book-sync.js
+LoadCredential=notion-token:%h/.config/notion-book-sync/notion-token
+Restart=on-failure
+RestartSec=10s
+StateDirectory=notion-book-sync-state
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+
+[Install]
+WantedBy=default.target
