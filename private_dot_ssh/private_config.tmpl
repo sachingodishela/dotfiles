@@ -1,0 +1,6 @@
+{{- $fields := bitwardenFields "item" "838fb596-c1d7-4282-91f8-b467006704d9" -}}
+{{- $host := (index $fields "Host").value -}}
+{{- $clientID := (index $fields "Header and Client ID").value | trimPrefix "CF-Access-Client-Id: " -}}
+{{- $clientSecret := (index $fields "Header and Client Secret").value | trimPrefix "CF-Access-Client-Secret: " -}}
+Host {{ $host }}
+  ProxyCommand cloudflared access ssh --hostname %h --service-token-id '{{ $clientID }}' --service-token-secret '{{ $clientSecret }}'
