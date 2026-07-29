@@ -1,2 +1,28 @@
 alias copilot="copilot --yolo"
 alias ch="chezmoi"
+
+# Function to unlock Bitwarden and set BW_SESSION in the current shell
+bw-unlock() {
+    # Check if bw is installed
+    if ! command -v bw &> /dev/null; then
+        echo "Error: Bitwarden CLI (bw) is not installed."
+        return 1
+    fi
+
+    # Unlock and capture the raw token
+    local token
+    token=$(bw unlock --raw)
+
+    # Check if the unlock was successful before exporting
+    if [ -n "$token" ] && [[ "$token" != *"Error"* ]]; then
+        export BW_SESSION="$token"
+        echo "Success: Vault unlocked and BW_SESSION set!"
+    else
+        echo "Failed to unlock vault."
+        return 1
+    fi
+}
+
+# Shortcut alias to trigger the function
+alias unlock='bw-unlock'
+
