@@ -2,7 +2,7 @@
 Using [chezmoi](https://www.chezmoi.io/) to manage all config files in this repository.
 
 ### Setting up a new machine
-1. Setup bitwarden for secrets
+1. Prerequisite: Setup bitwarden for fetching secrets and other identity info.
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.6/install.sh | bash
 npm install --global @bitwarden/cli
