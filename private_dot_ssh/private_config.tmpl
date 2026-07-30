@@ -4,3 +4,7 @@
 {{- $clientSecret := (index $fields "Header and Client Secret").value | trimPrefix "CF-Access-Client-Secret: " -}}
 Host {{ $host }}
   ProxyCommand cloudflared access ssh --hostname %h --service-token-id '{{ $clientID }}' --service-token-secret '{{ $clientSecret }}'
+
+Host 3.godishela.in
+  User devadmin
+  ProxyCommand cloudflared access ssh --hostname %h --service-token-id '{{ $clientID }}' --service-token-secret '{{ $clientSecret }}'
