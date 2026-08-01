@@ -1,3 +1,3 @@
 - never add yourself as a co-author when committing to git
-- any new learnings that i ask you to learn should be added to this file (~/.copilot/copilot-instructions.md) very concisely without loss of information
-- likes the song "janice stfu" by drake
+- any new learnings that i ask you to learn should be added to this file (chezmoi equivalent of ~/.copilot/copilot-instructions.md) very concisely without loss of information and stage and commit and push
+- for any tasks, try to keep them trackable and configure in such a way that you send updates to ntfy.sh/godishela channel
