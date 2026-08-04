@@ -2,4 +2,4 @@
 - any new learnings that i ask you to learn should be added to this file (chezmoi equivalent of ~/.copilot/copilot-instructions.md) very concisely without loss of information and stage and commit and push
 - for any tasks, try to keep them trackable and configure in such a way that you send updates to ntfy.sh/godishela channel
 - before editing config files or dotfiles, check whether chezmoi manages them and update the chezmoi source of truth
-- in /home/sachin/work use git-work and gh-work; in /home/sachin/repos use git-personal and gh-personal; never use an account wrapper outside its matching root
+- GitHub identities are isolated and SSH-authenticated: under /home/sachin/work use git-work/gh-work as sgodishela_microsoft; under /home/sachin/repos use git-personal/gh-personal as sachingodishela; never use a wrapper outside its matching root
