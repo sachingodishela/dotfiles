@@ -1,3 +1,4 @@
 - never add yourself as a co-author when committing to git
 - any new learnings that i ask you to learn should be added to this file (chezmoi equivalent of ~/.copilot/copilot-instructions.md) very concisely without loss of information and stage and commit and push
 - for any tasks, try to keep them trackable and configure in such a way that you send updates to ntfy.sh/godishela channel
+- before editing config files or dotfiles, check whether chezmoi manages them and update the chezmoi source of truth
