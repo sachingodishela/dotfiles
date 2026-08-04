@@ -17,6 +17,7 @@ Environment=DISCORD_CHANNEL_ID=1534100366373818428
 Environment=DISCORD_USER_ID=710119698313773178
 Environment=DISCORD_ROLE_ID=1534099998214717453
 Environment=BROKER_DEFAULT_CWD=/home/sachin
+Environment=BROKER_COPILOT_ALLOW_ALL=true
 Environment=BROKER_MAX_SESSIONS=3
 Environment=COPILOT_BIN=/home/sachin/.nvm/versions/node/v24.18.1/bin/copilot
 Environment=PATH=/home/sachin/.local/bin:/home/sachin/.nvm/versions/node/v24.18.1/bin:/usr/local/bin:/usr/bin:/bin
