@@ -5,6 +5,8 @@ Using [chezmoi](https://www.chezmoi.io/) to manage all config files in this repo
 1. Prerequisite: Setup bitwarden for fetching secrets and other identity info.
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.6/install.sh | bash
+source ~/.bashrc
+npm instal --lts
 npm install --global @bitwarden/cli
 bw login
 export BW_SESSION="$(bw unlock --raw)"
@@ -19,6 +21,7 @@ unset BW_SESSION
 ### Applications
 |Name|Purpose|Files|
 |-|-|-|
+|tailscale|Mesh to access server with low latency|
 |[bitwarden](https://bitwarden.com/help/cli/)|Passwords and secret manager|
 |git|version control|[.gitconfig](/dot_gitconfig)
 |[neovim](https://neovim.io/)|Primary text editor|[nvim](/dot_config/nvim)
