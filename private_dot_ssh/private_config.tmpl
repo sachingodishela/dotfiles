@@ -2,9 +2,18 @@
 {{- $host := (index $fields "Host").value -}}
 {{- $clientID := (index $fields "Header and Client ID").value | trimPrefix "CF-Access-Client-Id: " -}}
 {{- $clientSecret := (index $fields "Header and Client Secret").value | trimPrefix "CF-Access-Client-Secret: " -}}
-Host {{ $host }}
+
+
+Host cloudthink
+  Hostname {{ $host }}
+  User sachin
   ProxyCommand cloudflared access ssh --hostname %h --service-token-id '{{ $clientID }}' --service-token-secret '{{ $clientSecret }}'
 
-Host 3.godishela.in
+Host u
+    Hostname u620
+    User sachin
+
+Host 3
+  Hostname 3.godishela.in
   User devadmin
   ProxyCommand cloudflared access ssh --hostname %h --service-token-id '{{ $clientID }}' --service-token-secret '{{ $clientSecret }}'
