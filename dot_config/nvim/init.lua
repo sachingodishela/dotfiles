@@ -110,6 +110,7 @@ require("lazy").setup({
   },
   { "folke/which-key.nvim", event = "VeryLazy", opts = {} },
   { "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
+  { "petertriho/nvim-scrollbar", event = "VeryLazy", opts = {} },
 
   -- Mason: install LSP servers / debuggers / formatters via nvim
   { "williamboman/mason.nvim", opts = {} },
@@ -179,4 +180,3 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.keymap.set('n', 'q', '<cmd>bd!<CR>', { buffer = args.buf })
   end,
 })
-
