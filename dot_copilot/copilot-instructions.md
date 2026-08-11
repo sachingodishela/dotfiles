@@ -3,3 +3,4 @@
 - for any tasks, try to keep them trackable and configure in such a way that you send updates to ntfy.sh/godishela channel
 - before editing config files or dotfiles, check whether chezmoi manages them and update the chezmoi source of truth
 - GitHub identities are isolated and SSH-authenticated: under /home/sachin/work use git-work/gh-work; under /home/sachin/repos use git-personal/gh-personal; never use a wrapper outside its matching root
+- for sub-agent tasks, use the strongest appropriate model with the maximum context window; do not optimize for cost
