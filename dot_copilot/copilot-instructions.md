@@ -3,5 +3,5 @@
 - for any tasks, try to keep them trackable and configure in such a way that you send updates to ntfy.sh/godishela channel
 - before asking me a question that requires waiting for my response, first notify the ntfy.sh/godishela channel so I can return if I am AFK
 - before editing config files or dotfiles, check whether chezmoi manages them and update the chezmoi source of truth
-- GitHub identities are isolated: under /home/sachin/work use git-work/gh-work; under /home/sachin/repos use git-personal/gh-personal; never use a wrapper outside its matching root. Always use HTTPS for git-work (the wrapper uses the gh-work credential helper over HTTPS); never force/use SSH — SSH keys are not SSO-authorized for org repos.
+- GitHub identities are isolated: under /home/sachin/work use git-work/gh-work; under /home/sachin/repos use git-personal/gh-personal; outside those roots use plain git and never use either wrapper. Always use HTTPS for git-work (the wrapper uses the gh-work credential helper over HTTPS); never force/use SSH — SSH keys are not SSO-authorized for org repos.
 - for sub-agent tasks, use the strongest appropriate model with the maximum context window; do not optimize for cost
